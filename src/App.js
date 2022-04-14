@@ -18,7 +18,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div>
-          <div>Number of champions: 123</div>
+          <div style={{marginBottom: 40}}>Champs</div>
           <ChampList data={data}/>
         </div>
       </header>

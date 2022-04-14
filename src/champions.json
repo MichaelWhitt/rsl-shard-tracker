@@ -1,6 +1,6 @@
 {
     "data": [
-        {"factions": {
+        {"factions": [{
             "telerians": [
                 {"totalChamps": 224},
                 {"subFactions": [
@@ -4852,6 +4852,6 @@
                         }}
                     ]}]
             
-        }}
+        }]}
     ]
 }
