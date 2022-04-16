@@ -185,7 +185,18 @@
             {"id": "16", "name": "Rowan", "rarity": "epic", "affinity": "void", "type": "attack", "faction": "Banner Lords", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
             {"id": "17", "name": "Azure", "rarity": "epic", "affinity": "void", "type": "hp", "faction": "Banner Lords", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
             {"id": "18", "name": "Warcaster", "rarity": "epic", "affinity": "void", "type": "support", "faction": "Banner Lords", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
-            {"id": "19", "name": "Ursala", "rarity": "epic", "affinity": "void", "type": "support", "faction": "Banner Lords", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0}
+            {"id": "19", "name": "Ursala", "rarity": "epic", "affinity": "void", "type": "support", "faction": "Banner Lords", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "20", "name": "Royal Guard", "rarity": "epic", "affinity": "magic", "type": "attack", "faction": "High Elves", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "20", "name": "Tayrel", "rarity": "epic", "affinity": "magic", "type": "defense", "faction": "High Elves", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "20", "name": "Thenasil", "rarity": "epic", "affinity": "force", "type": "support", "faction": "High Elves", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "20", "name": "Luthiea", "rarity": "epic", "affinity": "force", "type": "attack", "faction": "High Elves", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "20", "name": "Vergis", "rarity": "epic", "affinity": "spirit", "type": "defense", "faction": "High Elves", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "20", "name": "Marksman", "rarity": "epic", "affinity": "spirit", "type": "attack", "faction": "High Elves", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "20", "name": "Jinglehunter", "rarity": "epic", "affinity": "spirit", "type": "attack", "faction": "High Elves", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "20", "name": "Battlesage", "rarity": "epic", "affinity": "void", "type": "support", "faction": "High Elves", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "20", "name": "Exemplar", "rarity": "epic", "affinity": "void", "type": "attack", "faction": "High Elves", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "30", "name": "Andryssia", "rarity": "epic", "affinity": "void", "type": "defense", "faction": "High Elves", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            
             
         ],
         "rare": [
