@@ -1411,190 +1411,147 @@
                         "legendary": [
                             {
                                 "id": 1,
-                                "name": "Lord Champfort",
-                                "affinity": "Magic",
-                                "type": "HP"
-                            },
-                            {
-                                "id": 2,
-                                "name": "Sethallia",
-                                "affinity": "Magic",
-                                "type": "Support"
-                            },
-                            {
-                                "id": 3,
-                                "name": "Cillian",
+                                "name": "Big 'Un",
                                 "affinity": "Magic",
                                 "type": "Attack"
                             },
                             {
-                                "id": 4,
-                                "name": "Sigmund",
+                                "id": 2,
+                                "name": "War Mother",
+                                "affinity": "Magic",
+                                "type": "Attack"
+                            },
+                            {
+                                "id": 3,
+                                "name": "Ignatius",
                                 "affinity": "Magic",
                                 "type": "Defense"
                             },
                             {
-                                "id": 5,
-                                "name": "Black Knight",
+                                "id": 4,
+                                "name": "Gurptuk",
                                 "affinity": "Force",
-                                "type": "HP"
+                                "type": "Support"
+                            },
+                            {
+                                "id": 5,
+                                "name": "Guurda",
+                                "affinity": "Force",
+                                "type": "Support"
                             },
                             {
                                 "id": 6,
-                                "name": "Minaya",
-                                "affinity": "Force",
+                                "name": "Shamrock",
+                                "affinity": "Spirit",
                                 "type": "Support"
                             },
                             {
                                 "id": 7,
-                                "name": "Helior",
-                                "affinity": "Force",
-                                "type": "Defense"
-                            },
-                            {
-                                "id": 8,
-                                "name": "Lugan",
+                                "name": "Drokgul",
                                 "affinity": "Spirit",
-                                "type": "HP"
-                            },
-                            {
-                                "id": 9,
-                                "name": "Septimus",
-                                "affinity": "Spirit",
-                                "type": "Attack"
-                            },
-                            {
-                                "id": 10,
-                                "name": "Richtoff",
-                                "affinity": "Spirit",
-                                "type": "Attack"
-                            },
-                            {
-                                "id": 11,
-                                "name": "Raglin",
-                                "affinity": "Void",
                                 "type": "Support"
                             },
                             {
-                                "id": 12,
-                                "name": "Baron",
+                                "id": 8,
+                                "name": "Gurgoh",
                                 "affinity": "Void",
                                 "type": "Attack"
                             }
-                            
                         ], 
                         "epic": [
                             {
                                 "id": 1,
-                                "name": "Hordin",
+                                "name": "Grimskin",
                                 "affinity": "Magic",
-                                "type": "Attack"
+                                "type": "Defense"
                             },
                             {
                                 "id": 2,
-                                "name": "Lordly Legionary",
-                                "affinity": "Magic",
-                                "type": "Attack"
-                            },
-                            {
-                                "id": 3,
-                                "name": "Archmage Hellmut",
+                                "name": "Uugo",
                                 "affinity": "Magic",
                                 "type": "Support"
                             },
                             {
+                                "id": 3,
+                                "name": "Klodd",
+                                "affinity": "Magic",
+                                "type": "HP"
+                            },
+                            {
                                 "id": 4,
-                                "name": "Gerhard",
+                                "name": "Siegehulk",
                                 "affinity": "Magic",
                                 "type": "Attack"
                             },
                             {
                                 "id": 5,
-                                "name": "Arndulf",
-                                "affinity": "Magic",
-                                "type": "Defense"
-                            },
-                            {
-                                "id": 6,
-                                "name": "Oathbound",
+                                "name": "Skullcrusher",
                                 "affinity": "Force",
                                 "type": "Defense"
                             },
                             {
+                                "id": 6,
+                                "name": "Shatterbones",
+                                "affinity": "Force",
+                                "type": "Attack"
+                            },
+                            {
                                 "id": 7,
-                                "name": "Chancellor Yasmin",
+                                "name": "Grunch",
                                 "affinity": "Force",
                                 "type": "Support"
                             },
                             {
                                 "id": 8,
-                                "name": "Seneschal",
+                                "name": "Ghrukkus",
                                 "affinity": "Force",
-                                "type": "Defense"
+                                "type": "Support"
                             },
                             {
                                 "id": 9,
-                                "name": "Alaric",
-                                "affinity": "Force",
+                                "name": "Galkut",
+                                "affinity": "Spirit",
                                 "type": "Attack"
                             },
                             {
                                 "id": 10,
-                                "name": "Lady Quilen",
-                                "affinity": "Force",
+                                "name": "Cagebreaker",
+                                "affinity": "Spirit",
                                 "type": "Attack"
                             },
                             {
                                 "id": 11,
-                                "name": "Sir Artimage",
-                                "affinity": "Force",
-                                "type": "Attack"
+                                "name": "Occult Brawler",
+                                "affinity": "Spirit",
+                                "type": "HP"
                             },
                             {
                                 "id": 12,
-                                "name": "Knight-Errant",
-                                "affinity": "Spirit",
-                                "type": "Attack"
-                            },
-                            {
-                                "id": 13,
-                                "name": "Stag Knight",
-                                "affinity": "Spirit",
-                                "type": "Support"
-                            },
-                            {
-                                "id": 14,
-                                "name": "Fearmonger",
-                                "affinity": "Spirit",
-                                "type": "Attack"
-                            },
-                            {
-                                "id": 15,
-                                "name": "Giscard",
+                                "name": "Ghrush",
                                 "affinity": "Spirit",
                                 "type": "Defense"
                             },
                             {
-                                "id": 16,
-                                "name": "Rowan",
-                                "affinity": "Void",
-                                "type": "Attack"
-                            },
-                            {
-                                "id": 17,
-                                "name": "Azure",
+                                "id": 13,
+                                "name": "Maneater",
                                 "affinity": "Void",
                                 "type": "HP"
                             },
                             {
-                                "id": 18,
-                                "name": "Warcaster",
+                                "id": 14,
+                                "name": "Towering Titan",
                                 "affinity": "Void",
-                                "type": "Support"
+                                "type": "HP"
                             },
                             {
-                                "id": 19,
-                                "name": "Ursala",
+                                "id": 15,
+                                "name": "Prundar",
+                                "affinity": "Void",
+                                "type": "Defense"
+                            },
+                            {
+                                "id": 16,
+                                "name": "Urogrim",
                                 "affinity": "Void",
                                 "type": "Support"
                             }
@@ -1602,105 +1559,93 @@
                         "rare": [
                             {
                                 "id": 1,
-                                "name": "Crossbowman",
+                                "name": "Rocktooth",
                                 "affinity": "Magic",
                                 "type": "Attack"
                             },
                             {
                                 "id": 2,
-                                "name": "Valerie",
+                                "name": "Pounder",
+                                "affinity": "Magic",
+                                "type": "Defense"
+                            },
+                            {
+                                "id": 3,
+                                "name": "Goon",
+                                "affinity": "Magic",
+                                "type": "Defense"
+                            },
+                            {
+                                "id": 4,
+                                "name": "Wagonbane",
                                 "affinity": "Magic",
                                 "type": "Support"
                             },
                             {
-                                "id": 3,
-                                "name": "Grandmaster",
-                                "affinity": "Magic",
-                                "type": "HP"
-                            },
-                            {
-                                "id": 4,
-                                "name": "Myrmidon",
-                                "affinity": "Magic",
-                                "type": "Defense"
-                            },
-                            {
                                 "id": 5,
-                                "name": "Misericord",
-                                "affinity": "Magic",
+                                "name": "Magmablood",
+                                "affinity": "Force",
                                 "type": "Attack"
                             },
                             {
                                 "id": 6,
-                                "name": "Preserver",
+                                "name": "Ruffstone",
                                 "affinity": "Force",
-                                "type": "Defense"
+                                "type": "Attack"
                             },
                             {
                                 "id": 7,
-                                "name": "Courtier",
+                                "name": "Jailer",
                                 "affinity": "Force",
                                 "type": "Attack"
                             },
                             {
                                 "id": 8,
-                                "name": "Bombardier",
+                                "name": "Lumberer",
                                 "affinity": "Force",
                                 "type": "Attack"
                             },
                             {
                                 "id": 9,
-                                "name": "Quaestor",
-                                "affinity": "Force",
-                                "type": "Attack"
+                                "name": "Furystoker",
+                                "affinity": "Spirit",
+                                "type": "Support"
                             },
                             {
                                 "id": 10,
-                                "name": "Spymaster",
-                                "affinity": "Force",
-                                "type": "HP"
+                                "name": "Siegebreaker",
+                                "affinity": "Spirit",
+                                "type": "Attack"
                             },
                             {
                                 "id": 11,
-                                "name": "Cataphract",
+                                "name": "Flesheater",
                                 "affinity": "Spirit",
-                                "type": "HP"
+                                "type": "Support"
                             },
                             {
                                 "id": 12,
-                                "name": "Conquerer",
-                                "affinity": "Spirit",
-                                "type": "Attack"
-                            },
-                            {
-                                "id": 13,
-                                "name": "Halberdier",
-                                "affinity": "Spirit",
-                                "type": "Attack"
-                            },
-                            {
-                                "id": 14,
-                                "name": "Chevalier",
-                                "affinity": "Void",
-                                "type": "Defense"
-                            },
-                            {
-                                "id": 15,
-                                "name": "Vanguard",
-                                "affinity": "Void",
-                                "type": "Defense"
-                            },
-                            {
-                                "id": 16,
-                                "name": "Steadfast Marshal",
+                                "name": "Rockbeast",
                                 "affinity": "Void",
                                 "type": "HP"
                             },
                             {
-                                "id": 17,
-                                "name": "Dagger",
+                                "id": 13,
+                                "name": "Bellower",
                                 "affinity": "Void",
-                                "type": "Attack"
+                                "type": "Support"
+                            },
+                            {
+                                "id": 14,
+                                "name": "Geargrinder",
+                                "affinity": "Void",
+                                "type": "HP"
+                            },
+                            {
+                                "id": 15,
+                                "name": "Mycolus",
+                                "affinity": "Void",
+                                "type": "Support"
                             }
                         ], 
                         "uncommon": [

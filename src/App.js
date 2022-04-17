@@ -1,17 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
-import champs from './champs.json'
 import champions from './champions.json'
 import ChampList from './Components/ChampList';
+import finalChampions from './finalChampList.json'
+//import champs from './champs.json'
 
 function App() {
-  //console.log(champs[0]) scraped champs didnt include updated list
+  
   const data = champions?.data?.[0]?.factions
-  const aChamps = []
-  const sortedChamps = champs.sort((a, b) => {
-    if (a.startsWith('A'))aChamps.push(a)
-   return a.localeCompare(b)
-  })
+  // const aChamps = []
+  // const sortedChamps = champs.sort((a, b) => {
+  //   if (a.startsWith('A'))aChamps.push(a)
+  //  return a.localeCompare(b)
+  // })
+
+  console.log(finalChampions.data.legendary[0].name)
   
   return (
     <div className="App">
