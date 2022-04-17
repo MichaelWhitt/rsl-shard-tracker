@@ -218,6 +218,23 @@
             {"id": "50", "name": "Lightsworn", "rarity": "epic", "affinity": "void", "type": "defense", "faction": "Sacred Order", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
             {"id": "51", "name": "Inquisitor Shamael", "rarity": "epic", "affinity": "void", "type": "attack", "faction": "Sacred Order", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
             {"id": "52", "name": "Godseeker Aniri", "rarity": "epic", "affinity": "void", "type": "defense", "faction": "Sacred Order", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "53", "name": "Aina", "rarity": "epic", "affinity": "magic", "type": "attack", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "54", "name": "Jotun", "rarity": "epic", "affinity": "magic", "type": "hp", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "55", "name": "Sikara", "rarity": "epic", "affinity": "magic", "type": "support", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "56", "name": "Atur", "rarity": "epic", "affinity": "magic", "type": "hp", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "57", "name": "Armina", "rarity": "epic", "affinity": "magic", "type": "attack", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "58", "name": "Alika", "rarity": "epic", "affinity": "force", "type": "attack", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "59", "name": "Teshada", "rarity": "epic", "affinity": "force", "type": "defense", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "60", "name": "Kallia", "rarity": "epic", "affinity": "force", "type": "attack", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "61", "name": "Maeve", "rarity": "epic", "affinity": "force", "type": "attack", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "62", "name": "Baroth", "rarity": "epic", "affinity": "force", "type": "hp", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "63", "name": "Woad-Painted", "rarity": "epic", "affinity": "spirit", "type": "hp", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "64", "name": "High Khatun", "rarity": "epic", "affinity": "spirit", "type": "support", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "65", "name": "Valla", "rarity": "epic", "affinity": "spirit", "type": "defense", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "66", "name": "Fahrakin", "rarity": "epic", "affinity": "spirit", "type": "attack", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "67", "name": "Haarken", "rarity": "epic", "affinity": "void", "type": "attack", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "68", "name": "Suwai", "rarity": "epic", "affinity": "void", "type": "attack", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0},
+            {"id": "69", "name": "Skytouched Shaman", "rarity": "epic", "affinity": "void", "type": "support", "faction": "Barbarians", "race": "Telerians", "has": 0, "rating": 0, "pulled": 0}
             
             
         ],
