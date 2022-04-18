@@ -250,8 +250,19 @@
             {"name": "Towering Titan", "rarity": "epic", "affinity": "void", "type": "hp", "faction": "Ogryn Tribes", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
             {"name": "Prundar", "rarity": "epic", "affinity": "void", "type": "defense", "faction": "Ogryn Tribes", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
             {"name": "Urogrim", "rarity": "epic", "affinity": "void", "type": "support", "faction": "Ogryn Tribes", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Jarang", "rarity": "epic", "affinity": "magic", "type": "attack", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Jareg", "rarity": "epic", "affinity": "magic", "type": "hp", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Venomage", "rarity": "epic", "affinity": "magic", "type": "support", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Basilisk", "rarity": "epic", "affinity": "force", "type": "attack", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Aox", "rarity": "epic", "affinity": "force", "type": "support", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Broodlord", "rarity": "epic", "affinity": "force", "type": "defense", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Zii", "rarity": "epic", "affinity": "force", "type": "attack", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Drake", "rarity": "epic", "affinity": "spirit", "type": "attack", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Jizoh", "rarity": "epic", "affinity": "spirit", "type": "defense", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Quargan", "rarity": "epic", "affinity": "spirit", "type": "support", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Broadmaw", "rarity": "epic", "affinity": "void", "type": "support", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Skathix", "rarity": "epic", "affinity": "void", "type": "support", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0}
 
-            {"name": "", "rarity": "epic", "affinity": "", "type": "", "faction": "", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
             {"name": "", "rarity": "epic", "affinity": "", "type": "", "faction": "", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
             {"name": "", "rarity": "epic", "affinity": "", "type": "", "faction": "", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
 
