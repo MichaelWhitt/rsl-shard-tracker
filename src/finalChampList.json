@@ -274,11 +274,23 @@
             {"name": "Hoforees", "rarity": "epic", "affinity": "force", "type": "support", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
             {"name": "Steelskull", "rarity": "epic", "affinity": "spirit", "type": "support", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
             {"name": "Fayne", "rarity": "epic", "affinity": "spirit", "type": "attack", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
-            {"name": "Basher", "rarity": "epic", "affinity": "void", "type": "attack", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0}
+            {"name": "Basher", "rarity": "epic", "affinity": "void", "type": "attack", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Ultimate Galek", "rarity": "epic", "affinity": "magic", "type": "attack", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Dhukk", "rarity": "epic", "affinity": "magic", "type": "defense", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Jorrg", "rarity": "epic", "affinity": "magic", "type": "support", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Torturehelm", "rarity": "epic", "affinity": "force", "type": "hp", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Zargala", "rarity": "epic", "affinity": "force", "type": "attack", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Bloodfeather", "rarity": "epic", "affinity": "force", "type": "attack", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Bonekeeper", "rarity": "epic", "affinity": "force", "type": "attack", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Shaman", "rarity": "epic", "affinity": "force", "type": "support", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Terrorbeast", "rarity": "epic", "affinity": "spirit", "type": "hp", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Vrask", "rarity": "epic", "affinity": "spirit", "type": "hp", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Survivor", "rarity": "epic", "affinity": "spirit", "type": "defense", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Seer", "rarity": "epic", "affinity": "void", "type": "support", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Tuhak", "rarity": "epic", "affinity": "void", "type": "attack", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Tolf", "rarity": "epic", "affinity": "void", "type": "hp", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Liburga", "rarity": "epic", "affinity": "void", "type": "support", "faction": "Orcs", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0}
 
-            {"name": "", "rarity": "epic", "affinity": "", "type": "", "faction": "", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
-
-            
         ],
         "rare": [
             
