@@ -261,9 +261,21 @@
             {"name": "Jizoh", "rarity": "epic", "affinity": "spirit", "type": "defense", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
             {"name": "Quargan", "rarity": "epic", "affinity": "spirit", "type": "support", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
             {"name": "Broadmaw", "rarity": "epic", "affinity": "void", "type": "support", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
-            {"name": "Skathix", "rarity": "epic", "affinity": "void", "type": "support", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0}
+            {"name": "Skathix", "rarity": "epic", "affinity": "void", "type": "support", "faction": "Lizardmen", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Taurus", "rarity": "epic", "affinity": "magic", "type": "attack", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Flesh-Tearer", "rarity": "epic", "affinity": "magic", "type": "support", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Scabrius", "rarity": "epic", "affinity": "magic", "type": "attack", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Ripper", "rarity": "epic", "affinity": "force", "type": "attack", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Reinbeast", "rarity": "epic", "affinity": "force", "type": "defense", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Snorting Thug", "rarity": "epic", "affinity": "force", "type": "hp", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Yaga", "rarity": "epic", "affinity": "force", "type": "attack", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Ursine Icecrusher", "rarity": "epic", "affinity": "force", "type": "defense", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Ursine Ironhide", "rarity": "epic", "affinity": "force", "type": "defense", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Hoforees", "rarity": "epic", "affinity": "force", "type": "support", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Steelskull", "rarity": "epic", "affinity": "spirit", "type": "support", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Fayne", "rarity": "epic", "affinity": "spirit", "type": "attack", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
+            {"name": "Basher", "rarity": "epic", "affinity": "void", "type": "attack", "faction": "Skinwalkers", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0}
 
-            {"name": "", "rarity": "epic", "affinity": "", "type": "", "faction": "", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
             {"name": "", "rarity": "epic", "affinity": "", "type": "", "faction": "", "race": "Gaellen Pact", "has": 0, "rating": 0, "pulled": 0},
 
             
