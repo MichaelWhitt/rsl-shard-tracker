@@ -1,0 +1,15 @@
+type Champ {
+    name: String!
+    rarity: String!
+    affinity: String!
+    type: String!
+    faction: String!
+    race: String!
+    owned: Boolean
+    rating: Int
+    pullCount: Int
+}
+
+type Query {
+    allChamps: [Champ!]!
+}
