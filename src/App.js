@@ -1,20 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
-import champions from './champions.json'
 import ChampList from './Components/ChampList';
 import finalChampions from './finalChampList.json'
 //import champs from './champs.json'
 
 function App() {
   
-  const data = champions?.data?.[0]?.factions
+  
+  const champs = finalChampions?.data
+
+  console.log('app champs', champs)
   // const aChamps = []
   // const sortedChamps = champs.sort((a, b) => {
   //   if (a.startsWith('A'))aChamps.push(a)
   //  return a.localeCompare(b)
   // })
-
-  console.log(finalChampions.data.legendary[0].name)
   
   return (
     <div className="App">
@@ -22,7 +22,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <div>
           <div style={{marginBottom: 40}}>Champs</div>
-          <ChampList data={data}/>
+          <ChampList champs={champs}/>
         </div>
       </header>
     </div>
