@@ -44,8 +44,36 @@ const GET_CHAMPS = `
       }
     `
 
+    const UPDATE_CHAMP = `
+    mutation($id: ID!, $name: String!, $rarity: String!, $affinity: String!, $type: String!, $faction: String!, $race: String!, $owned: Boolean, $rating: Int, $pullCount: Int) {
+        updateChamp(id: $id, data: {name:$name, rarity:$rarity, affinity:$affinity, type:$type, faction:$faction, race:$race, owned:$owned, rating:$rating, pullCount:$pullCount}){
+            _id
+          name
+          rarity
+          affinity
+          type
+          faction
+          race
+          owned
+          rating
+          pullCount
+        }
+    }
+    `
+
+    const DELETE_CHAMP = `
+    mutation($id: ID!){
+        deleteChamp(id: $id){
+            _id
+        }
+    }
+    `
+
+
 
     module.exports = {
         GET_CHAMPS,
-        CREATE_CHAMP
+        CREATE_CHAMP,
+        UPDATE_CHAMP,
+        DELETE_CHAMP
     }

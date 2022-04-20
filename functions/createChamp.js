@@ -4,11 +4,11 @@ const sendQuery = require("./utils/sendQuery")
 const formattedResponse = require('./utils/formattedResponse')
 
 exports.handler = async (event) => {
-    
-    //console.log('THIS IS THE EVENT:', event)
-    // THIS WORKS IN FAUNA const res = await sendQuery(CREATE_CHAMP, {name: 'card', rarity: 'lego', affinity: 'magic', type: 'hp', faction: 'thing', race: 'otherTHing'})
-    // console.log('res', res) res returns the createChamp object with everything we passed in
 
+    if (event.httpMethod !== 'POST') return formattedResponse(405, {err: `${event.httpMethod} not supported`})
+
+    // to create champ, pass in object with:
+    // "name": "Cillian", "rarity": "Legendary", "affinity": "Magic", "type": "Attack", "faction": "Banner Lords", "race": "Telerians", "owned": false, "rating": 0, "pulled": 0
 
     const {name, rarity, affinity, type, faction, race, owned, rating, pullCount} = JSON.parse(event.body)
     const variables = {name, rarity, affinity, type, faction, race, owned, rating, pullCount}
