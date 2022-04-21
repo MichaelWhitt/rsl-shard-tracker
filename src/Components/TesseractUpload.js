@@ -4,7 +4,7 @@ import testphoto from '../Assets/finalworks.jpg'
 
 const TessUpload = () => {
 
-    const [imageText, setText] = useState("Testing")
+    const [imageText, setText] = useState("")
     const reg = ['Bandit','Cardiel', 'Hordin', 'Lordly Legionary', 'Rotos', 'Sethala', 'Lydia', 'Thrall']
     
 
@@ -13,8 +13,6 @@ const TessUpload = () => {
         testphoto,
         'eng'
       ).then(({ data: { text } }) => {
-        
-        console.log(text.match('Bandit'))
 
       })
 
