@@ -1,10 +1,27 @@
 import React from "react"
 
 export default class ChampList extends React.Component {
+
+    state = {
+        champArr: []
+    }
+
+    componentDidMount(){
+        this.buildArr()
+    }
+
+    buildArr = () => {
+        const {champs} = this.props
+        const arr = champs.map( c => c.name)
+        this.setState({champArr: arr})
+    }
+
+    
+
+
 render(){
     const {champs} = this.props
-    const {common, uncommon, rare, epic, legendary} = champs
-
+    
     // const aChamps = []
     // const sortedChamps = legendary.sort((a, b) => {
     // if (a.name.startsWith('A')) aChamps.push(a)
@@ -14,11 +31,19 @@ render(){
     
 
     return(
-        <div style={{display:'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <div style={{fontSize: '3.5rem', color: 'gold'}}>Legendaries</div>
-            {legendary.map((c, i) => <div key={i} style={{textAlign: 'left'}}>{i+1}: {c.name}</div>)}
-            <div style={{fontSize: '3.5rem', color: '#ff00ff'}}>Epics</div>
-            {epic.map((c, i) => <div key={i} style={{textAlign: 'left'}}>{i+1}: {c.name}</div>)}
+        <div style={{display:'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
+            
+            <div style={{fontSize: '3.5rem', textAlign: 'left'}}>
+                <div style={{color: 'gold'}}>Legendaries</div>
+                {champs ? champs.map( c => c.rarity === "Legendary" ? <div key={c.id} style={{fontSize: 30, textAlign: 'left'}}>{c.name}</div> : null) : null}
+            </div>
+            
+
+            <div style={{fontSize: '3.5rem', textAlign: 'left'}}>
+                <div style={{color: '#ff00ff'}}>Epics</div>
+                {champs ? champs.map( c => c.rarity === "Epic" ? <div key={c.id} style={{fontSize: 30, textAlign: 'left'}}>{c.name}</div> : null) : null}
+            </div>
+            <div>{this.state.champArr[2]}</div>
         </div>
     )
 }
