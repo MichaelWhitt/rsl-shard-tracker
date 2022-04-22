@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import finalChampions from '../finalChampList.json'
+import champDefaults from '../finalChampList.json'
+
 
 const GameContainer = ({champs}) => {
     // matching game 2x2 flip tiles
@@ -8,26 +9,23 @@ const GameContainer = ({champs}) => {
     // double image vs each other, affinity war
     // guess which stat is highest or stat wars (cardiel attack vs marksman attack)
 
-
+    
     // codex
 
-
-    const legendaries = finalChampions.data.legendary
-    const epics = finalChampions.data.epic
-
-    const Leggo = () => {
+    
+console.log('cham,ps', champs)
+    const Champ = () => {
         
         return(
             <div>
-              {legendaries.map( (l,i) => {
-                  const image = +l.image.match(/\d+/)[0]
-                  
-                  
+              {champDefaults.data.map( (l,i) => {
+                  //const image = +l.image.match(/\d+/)[0]
+                  //const image = JSON.stringify(l.image).slice(1, -1)
                   
                 return (
                     <div key={i} style={{color: '#000'}}>
-                        <div>{l.name}</div>
-                        <div><img src={require(`../Assets/cPics/21010.png`)} alt={l.name} width={40} /></div>
+                        <div><img src={l.image} width={50} alt={`${l.name}}`}/></div>
+                        <div style={{marginBottom: 50}}>{l.name}</div>
                     </div>
                 )
               })}
@@ -35,21 +33,15 @@ const GameContainer = ({champs}) => {
         )
     }
 
-    const Epic = () => {
-        return(
-            <div>
-              {epics.map( (e,i) => <div key={i} style={{color: '#000'}}>{e.name}</div>)}
-            </div>
-        )
-    }
+    
 
 
     
     
     return(
         <div className='gameContainer' style={{display: 'flex', overflowY: 'scroll'}}>
-            <Leggo />
-            <Epic />
+            <Champ />
+          
         </div>
     )
 }

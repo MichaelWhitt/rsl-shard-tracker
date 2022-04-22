@@ -1,6 +1,8 @@
+import axios from 'axios';
 import React, {useEffect, useState} from 'react'
 import './App.css';
 import GameContainer from './Components/GameContainer'
+import finalChampList from './finalChampList.json'
 
 
 // codex -> filter by anything, throw all champs on screen in list cards
@@ -10,6 +12,13 @@ function App() {
 
 
 const [champs, setChamps] = useState([])
+
+//programmatically create champs
+// const createChamp = async() => {
+//   finalChampList.data.map(v => {
+//     return axios.post('/api/createChamp', v).then((response) => console.log(response)).catch((err) => console.log(err))
+//   })
+// }
 
 useEffect(() => {
   loadChamps()
@@ -25,6 +34,7 @@ const loadChamps = async() => {
     <div className="App">
       <header className="App-header">
           <GameContainer champs={champs}/>
+          {/* <button onClick={() =>createChamp()}>Send</button> */}
       </header>
     </div>
   );

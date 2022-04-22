@@ -1,11 +1,11 @@
 import React from "react"
-import cardielImg from '../Assets/cPics/5760.png'
+
 
 export default class ChampList extends React.Component {
 
 render(){
     const {champs} = this.props
-    const arr = champs.map( c => c.name)
+    
     
     
     // const aChamps = []
@@ -29,7 +29,7 @@ render(){
                 <div style={{color: '#ff00ff'}}>Epics</div>
                 {champs ? champs.map( (c, i) => c.rarity === "Epic" ? <div key={i} style={{fontSize: 30, textAlign: 'left'}}>{c.name}</div> : null) : null}
             </div>
-            <div><img src={require('../Assets/cPics/5760.png')} alt='Cardiel' width={60}/></div>
+            
         </div>
     )
 }
