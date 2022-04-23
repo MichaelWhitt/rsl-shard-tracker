@@ -1,21 +1,21 @@
 const GET_CHAMPS = `
-        query {
-            allChamps{
-                data{
-                    _id
-                    name
-                    rarity
-                    affinity
-                    type
-                    faction
-                    race
-                    owned
-                    rating
-                    pullCount
-                    image
-                }
-            }
-        }
+query {
+  allChamps{
+    data{
+      _id
+      name
+      rarity
+      affinity
+      type
+      faction
+      race
+      owned
+      rating
+      pullCount
+      image
+    }
+  }
+}
     `
 
     const CREATE_CHAMP = `

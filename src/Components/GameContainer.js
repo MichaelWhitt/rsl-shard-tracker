@@ -24,7 +24,7 @@ console.log('cham,ps', champs)
                   
                 return (
                     <div key={i} style={{color: '#000'}}>
-                        <div><img src={l.image} width={50} alt={`${l.name}}`}/></div>
+                        <div><img src={l.image} width={100} alt={`${l.name}`}/></div>
                         <div style={{marginBottom: 50}}>{l.name}</div>
                     </div>
                 )
