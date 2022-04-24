@@ -28,6 +28,7 @@ const loadChamps = async() => {
     const res = await fetch('/api/getChamps')
     const loadedChamps = await res.json() // get the body out of res by converting it to JSON
     setChamps(loadedChamps)
+    champs.map(c => console.log(c.name))
 }
   
   return (

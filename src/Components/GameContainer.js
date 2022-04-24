@@ -12,13 +12,11 @@ const GameContainer = ({champs}) => {
     
     // codex
 
-    
-console.log('cham,ps', champs)
-    const Champ = () => {
+    const Champ = (props) => {
         
         return(
             <div>
-              {champDefaults.data.map( (l,i) => {
+              {champs.map( (l,i) => {
                   //const image = +l.image.match(/\d+/)[0]
                   //const image = JSON.stringify(l.image).slice(1, -1)
                   

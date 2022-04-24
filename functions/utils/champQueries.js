@@ -1,6 +1,6 @@
 const GET_CHAMPS = `
 query {
-  allChamps{
+  allChamps(_size: 1000){
     data{
       _id
       name
