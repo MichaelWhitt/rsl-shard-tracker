@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import champDefaults from '../finalChampList.json'
+import React from 'react'
+import localChamps from '../finalChampList.json'
 
 
 const GameContainer = ({champs}) => {
@@ -14,11 +14,10 @@ const GameContainer = ({champs}) => {
 
     const Champ = (props) => {
         
+        
         return(
             <div>
-              {champs.map( (l,i) => {
-                  //const image = +l.image.match(/\d+/)[0]
-                  //const image = JSON.stringify(l.image).slice(1, -1)
+              {champs ? champs.map( (l,i) => {
                   
                 return (
                     <div key={i} style={{color: '#000'}}>
@@ -26,7 +25,7 @@ const GameContainer = ({champs}) => {
                         <div style={{marginBottom: 50}}>{l.name}</div>
                     </div>
                 )
-              })}
+              }): null}
             </div>
         )
     }

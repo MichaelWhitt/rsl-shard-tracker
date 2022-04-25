@@ -1,0 +1,66 @@
+.filterContainer {
+    max-width: 100vw;
+    height: 100vh;
+    background: lightseagreen;
+    overflow-y: scroll;
+}
+
+.champCard {
+    width: 80%;
+    min-width: 600px;
+    height: 175px;
+    color: #000;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #aaa;
+    font-size: 25px;
+}
+.filterBtn {
+    width: 100px;
+    height: 50px;
+    background: #ff00ff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 1400px) {
+
+    .champCard {
+        font-size: 20px;
+        width: 500px;
+        min-width: 500px;
+    }
+    .break {
+        width: 500px;
+        min-width: 500px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .champCard {
+        font-size: 18px;
+        width: 200px;
+        min-width: 400px;
+    }
+    .break {
+        width: 200px;
+        min-width: 400px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+
+    .champCard {
+        font-size: 12px;
+        width: 200px;
+        min-width: 300px;
+    }
+    .break {
+        width: 200px;
+        min-width: 300px;
+    }
+}
+
+
+
