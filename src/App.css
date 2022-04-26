@@ -31,10 +31,12 @@
 .gameContainer {
   width: 90vw;
   height: 80vh;
-  background-color: white;
-  
+  background-color: white; 
   box-shadow: 0 0 5px #ccc;
   border-radius: 15px;
+}
+.champFlipCard:hover {
+  box-shadow: 0px 0px 15px #ff00ff;
 }
 
 @keyframes App-logo-spin {

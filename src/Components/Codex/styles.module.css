@@ -8,19 +8,73 @@
 .champCard {
     width: 80%;
     min-width: 600px;
-    height: 175px;
+    height: 150px;
     color: #000;
     margin: 10px;
     border-radius: 15px;
     box-shadow: 0 0 5px #aaa;
     font-size: 25px;
 }
+
+.champListCard {
+    width: 220px;
+    height: 290px;
+    text-align: center;
+    margin: 25px 17px;
+    border: 2px solid;
+    box-shadow: 0 0 5px #000;
+    border-radius: 15px;
+    background: #ccc;
+    color: #000;
+    font-weight: 700;
+}
+
+.listCardName {
+    background: #000; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: 90px;
+    border-radius: 0 0 9px 9px
+}
+
 .filterBtn {
     width: 100px;
     height: 50px;
-    background: #ff00ff;
+    background: rgb(255, 0, 255);
     font-size: 15px;
     font-weight: 700;
+}
+
+.filterBtn:hover {
+    background: rgba(255, 0, 255, 0.7);
+    cursor: pointer;
+}
+
+.stickyButtonsDiv {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    justify-content: center;
+    background: rgba(0,0,0, 1);
+    flex-wrap: wrap;
+}
+
+.stickyButton {
+    width: 100px;
+    height: 50px;
+    color: #000;
+    background: rgb(25, 255, 4);
+    font-weight: 700;
+    font-size: 13px;
+    border: 1px dashed;
+}
+
+.stickyButton:hover {
+    background: #ccc !important;
+    cursor: pointer;
+
 }
 
 @media only screen and (max-width: 1400px) {
