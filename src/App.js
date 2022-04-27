@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './App.css';
-import GameContainer from './Components/GameContainer'
+import GameContainer from './Components/Game/GameContainer'
 import Codex from './Components/Codex/Codex'
 import localChampions from './finalChampList.json'
 

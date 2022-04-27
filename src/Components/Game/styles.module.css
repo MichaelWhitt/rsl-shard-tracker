@@ -1,0 +1,8 @@
+.gameChampCard:hover{
+    box-shadow: 0 0 15px #ff00ff
+}
+
+.gameChampCard {
+    border-radius: 15px;
+    border: 1px solid white;
+}

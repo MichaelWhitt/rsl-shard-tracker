@@ -6,11 +6,12 @@
 }
 
 .champCard {
-    width: 80%;
+    width: 45.5%;
     min-width: 600px;
     height: 150px;
     color: #000;
     margin: 10px;
+    margin-left: 50px;
     border-radius: 15px;
     box-shadow: 0 0 5px #aaa;
     font-size: 25px;
