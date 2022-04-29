@@ -15,17 +15,21 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  overflow-y: hidden !important;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.body, html {
+  background-color: #282c34;
 }
 
 .gameContainer {
@@ -37,6 +41,19 @@
 }
 .champFlipCard:hover {
   box-shadow: 0px 0px 15px #ff00ff;
+}
+
+.screenMode {
+  background: #ccc;
+  font-size: 30px;
+  width: 150px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.screenMode:hover {
+  background: #fff;
+  cursor: pointer;
 }
 
 @keyframes App-logo-spin {

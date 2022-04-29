@@ -280,9 +280,9 @@ export default class Codex extends React.Component {
         }
 
         return(
-            <div style={{width: '95vw', height: '100vh', textAlign: 'left'}}>
-                <div style={{marginTop: 20}}>
-                    <span style={{marginbottom: 5}}>Filter By: </span>
+            <div style={{width: '95vw', height: '92.5vh', textAlign: 'left'}}>
+                <div style={{marginTop: 20, display: 'flex', justifyContent: 'center'}}>
+                    <span style={{marginRight: 10}}>Filter By: </span>
                     <button 
                         className={`${styles.filterBtn}`} 
                         onClick={() => this.setState({filteredValue: 'Rarity'})} 
@@ -313,12 +313,13 @@ export default class Codex extends React.Component {
                         style={{background: filteredValue === 'Affinity' ? 'white' : null, borderRadius: '0 15px 15px 0'}}>
                             Affinity
                     </button>
+                    <span style={{marginLeft: 20}}>
+                        <span>View By:</span>
+                        <button className={`${styles.filterBtn}`} style={{marginLeft: 10, borderRadius: '15px 0 0 15px', background: list ? 'white' : null}}  onClick={() => this.setState({list: true})}>List</button>
+                        <button className={`${styles.filterBtn}`} style={{borderRadius: '0 15px 15px 0', background: !list ? 'white' : null}}  onClick={() => this.setState({list: false})}>Full</button>
+                    </span>
                 </div>
-                <div>
-                    <span>View By:</span>
-                    <button className={`${styles.filterBtn}`} style={{marginLeft: 10, marginTop: 10, borderRadius: '15px 0 0 15px', background: list ? 'white' : null}}  onClick={() => this.setState({list: true})}>List</button>
-                    <button className={`${styles.filterBtn}`} style={{borderRadius: '0 15px 15px 0', background: !list ? 'white' : null}}  onClick={() => this.setState({list: false})}>Full</button>
-                </div>
+                
                 <div style={{marginTop: 20}}>
                     {filteredValue === 'Rarity' ? <Rarity /> : null}
                     {filteredValue === 'Race' ? <Race /> : null}
@@ -326,7 +327,6 @@ export default class Codex extends React.Component {
                     {filteredValue === 'Type' ? <Type /> : null}
                     {filteredValue === 'Affinity' ? <Affinity /> : null}
                 </div>
-                
             </div>
         )
     }

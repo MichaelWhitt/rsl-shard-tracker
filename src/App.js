@@ -1,16 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import './App.css';
-import GameContainer from './Components/Game/GameContainer'
+import GameGrid from './Components/Game/GameGrid'
 import Codex from './Components/Codex/Codex'
 import localChampions from './finalChampList.json'
-
-
-// codex -> filter by anything, throw all champs on screen in list cards
-// game
 
 function App() {
 
 const [champs, setChamps] = useState([])
+const [codex, setCodex] = useState(true)
 
 //programmatically create champs
 // const createChamp = async() => {
@@ -33,9 +30,13 @@ const loadChamps = async() => {
   return (
     <div className="App">
       <header className="App-header">
-          <Codex champs={champs}/>
-          <GameContainer champs={champs}/>
-          {/* <button onClick={() =>createChamp()}>Send</button> */}
+        <div>
+          <button className='screenMode' style={{background: codex ? '#9fe2ba': null, borderRadius: '15px 0 0 15px'}} onClick={() => setCodex(true)}>Codex</button>
+          <button className='screenMode' style={{background: codex ? null : '#9fe2ba', borderRadius: '0 15px 15px 0'}} onClick={() => setCodex(false)}>Game</button>
+        </div>
+        {codex ? <Codex champs={champs}/> : <GameGrid champs={champs}/>}
+          
+        {/* <button onClick={() =>createChamp()}>Send</button> */}
       </header>
     </div>
   );
