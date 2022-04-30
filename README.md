@@ -1,3 +1,1 @@
-# Getting Started with Raid Codex
-
-
+# Getting Started with Raid Codex and Raid Champ Guesser
