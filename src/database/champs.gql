@@ -13,4 +13,12 @@ type Champ {
 
 type Query {
     allChamps: [Champ!]!
+    allScores: [Score!]!
+}
+
+type Score {
+    user: String!
+    score: String!
+    time: String!
+    email: String
 }

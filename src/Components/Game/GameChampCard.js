@@ -4,27 +4,54 @@ import defenseIcon from '../../../src/icons/shield.png'
 import attackIcon from '../../../src/icons/sword.png'
 import hpIcon from '../../../src/icons/hp.png'
 import supportIcon from '../../../src/icons/support.png'
+import axios from 'axios'
 
 export default class GameChampCard extends React.Component {
 
     state={
         won: false,
-        correct: false,
         fakeChampions: [],
         allChampions: [],
         chosenChamp: {},
         display: false,
-        score: 0
+        score: 0,
+        time: 30,
+        scoreScreen: false,
+        name: '',
+        email: ''
     }
 
     componentDidMount(){
         if (this.state.allChampions.length === 0) this.getChamps()
+        setTimeout(() => {this.setState({scoreScreen: true, display: false})}, 30000)
     }
 
     componentDidUpdate(){
         if (this.state.won === true) {
             this.getChamps()
             this.setState({won: false})
+        }
+    }
+
+    updateTime = () => {
+        setInterval(() => {this.setState({time: this.state.time -1})}, 1000)
+    }
+
+
+    showScoreScreen = async() => {
+        this.setState({display: false, scoreScreen: true})
+    }
+
+    sendRecord = () => {
+        const {score, time, name, email} = this.state
+
+        if(score > 0 ){
+            if (name !== '' && name.length < 18) {
+                axios.post('/api/createScore', {user: name, score: score + '', time: time + '', email: email})
+                .then((res) => console.log(res)).catch((err) => console.log(err))
+            } else {
+                alert("Name can't be empty, and must be 18 or fewer characters.")
+            }
         }
     }
     
@@ -63,17 +90,18 @@ export default class GameChampCard extends React.Component {
 
             const handleClick = (e) => {
                 if(e.target.innerText === this.state.chosenChamp.name) {
-                    this.setState({display: true, score: this.state.score + 1})
+                    this.setState({score: this.state.score + 1, won: true})
+                } else if (e.target.innerText !== this.state.chosenChamp.name) {
+                    this.setState({score: this.state.score -1})
                 }
             }
             
-
             return(
                 <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-                    {this.state.allChampions.map((c, i) => {
+                    {this.state?.allChampions.map((c, i) => {
                         return (
                             <div key={i} style={{width: '400px'}}>
-                                <button className={`${styles.questionButton}`} onClick={(e) => handleClick(e)}>{c.name}</button>
+                                <button className={`${styles.questionButton}`} onClick={(e) => handleClick(e)}>{c?.name}</button>
                             </div>
                         )
                     }
@@ -81,22 +109,49 @@ export default class GameChampCard extends React.Component {
                 </div>
             )
         }
-
         return (
-            <div>{<div style={{paddingTop: 15}}>
-                {this.state.display ? 'Correct!' : 'Guess the Champ!'}
-                <div>Score: {this.state.score ? this.state.score : 0}</div>
-                </div>}
-                <div style={{display: 'flex', paddingTop: 75}}>
-                    <div style={{paddingTop: 20, width: '50%'}}>
+            <div>
+                <div>
+                    {this.state.scoreScreen ?
+                    <div style={{display: 'flex', justifyContent: 'center', marginTop: 80}}>
+                        <div style={{background: '#9fe2ba', height: '50vh', width: '500px', borderRadius: 15, color: '#000'}}>
+                            <div style={{fontWeight: 700, paddingTop: 25}}>Congrats!</div>
+                            <div style={{margin: '0 auto'}}>
+                                <div style={{margin: 40}}>Score: {this.state.score}</div>
+                                <div style={{fontSize: 15, marginTop: -30, marginBottom: 30, fontWeight: 700}}>{this.state.score < 0 ? "[Negative scores not tracked]" : null}</div>
+                                <div style={{fontWeight: 700, marginBottom: 10}}>Add Score To Leaderboards:</div>
+                                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                                    <input 
+                                        type="text" 
+                                        style={{height:50, width: 300, fontSize: 30, borderRadius: 10}} 
+                                        onChange={(e) => this.setState({name: e.target.value}) } 
+                                        placeholder="Enter Name" 
+                                    />
+                                    <input 
+                                        type="text" 
+                                        style={{height:50, width: 300, fontSize: 30, marginTop: 5, borderRadius: 10}} 
+                                        onChange={(e) => this.setState({email: e.target.value}) } 
+                                        placeholder="Email (Optional)" 
+                                    />
+                                </div>
+                            </div>
+                            <button className={`${styles.next}`} style={{background: '#fff'}} onClick={() => this.sendRecord()}>Send</button>
+                        </div>
+                        <button className={`${styles.next}`} style={{height: 100, width: 100, borderRadius: 50, marginLeft:20, background: '#fff'}}onClick={() => this.props.togglePlaying()}>Retry</button>
+                    </div>
+                     : 
+                     <div style={{paddingTop: 30, width: '100%'}}>
+                         <div style={{marginBottom: 55, display: 'flex', justifyContent: 'space-around', height: 40}}>
+                            <span>Score: {this.state.score || 0}</span>
+                        </div>
                         <img src={chosenChamp.image} alt='' style={{borderRadius: 15, boxShadow: '0 0 15px #9fe2bf'}} />
                         <Questions />
-                    </div>
+                    </div> }
                     <div style={{paddingTop: 20, width: '50%'}}>
-                    {this.state.display ? 
+                    {false && this.state.display ? 
                         <div style={{textAlign: 'left'}}>
                             <img src={chosenChamp.image} alt='' style={{borderRadius: 15, border: chosenChamp.rarity === 'Legendary' ? '2px dashed gold' : '2px dashed #ff00ff'}} />
-                            <span style={{fontSize: 45, marginLeft: 40}}>{chosenChamp.name}</span>
+                            <span style={{fontSize: 30, marginLeft: 40}}>{chosenChamp.name}</span>
                             <div >
                                 <hr />
                                 <div>Rarity: <span style={{color: chosenChamp.rarity === 'Legendary' ? 'gold' : '#ff00ff'}}>{chosenChamp.rarity}</span></div>
@@ -120,12 +175,12 @@ export default class GameChampCard extends React.Component {
                                 <div>Race: {chosenChamp.race}</div>
                                 <div>Faction: {chosenChamp.faction}</div>
                                 <button className={`${styles.next}`} onClick={() => this.setState({won: true, display: false})}>Next Champion</button>
+                                <button onClick={() => this.showScoreScreen()}>Create Score</button>
                             </div>
                         </div> 
-                        : null
-                     }
+                        : 
+                        null}
                     </div>
-                    
                 </div>
             </div>
             )
