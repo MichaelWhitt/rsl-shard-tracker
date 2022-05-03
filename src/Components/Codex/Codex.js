@@ -10,13 +10,22 @@ export default class Codex extends React.Component {
 
     state = {
         filteredValue: 'Faction',
-        list: true
+        list: true,
+        filteredByText: [],
+        searchValue: ''
+    }
+
+    filterText = (e) => {
+        let champions = this.props.champs.length !== 0 ? this.props.champs : testChamps.data
+        const searchVal = e.target.value.trim().toLowerCase()
+        //champions = champions.sort((a, b) => a.name.localeCompare(b.name))
+        const filteredChamps = champions.filter((c) => c.name.toLowerCase().includes(searchVal))
+        setTimeout(() => this.setState({filteredByText: filteredChamps, filteredValue: 'search'}), 1000)
     }
 
     render(){
-        const {filteredValue, list} = this.state
-        //const {champs} = this.props
-        const champs = testChamps.data
+        const {filteredValue, list, filteredByText, searchValue} = this.state
+        const champs = this.props.champs.length !== 0 ? this.props.champs : testChamps.data
 
         const ChampCard = ({c, i}) => {
             //filtering is defaulting to faction, find a way to change to rarity and name
@@ -34,18 +43,22 @@ export default class Codex extends React.Component {
                 <div className={`${styles.champCard}`} style={{background: c.rarity === 'Epic' ? '#a865c9' : 'rgb(220, 191, 26)' }} key={i}>
                     <div style={{display:'flex'}}>
                         <div style={{position: 'relative', left: 0, top: 0}}>
-                            <img src={c.image} height={150} style={{borderRadius: '15px 0 0 15px'}} alt={c.name} />
+                            <img src={c.image} height={200} style={{borderRadius: '15px 0 0 15px'}} alt={c.name} />
                         </div>
 
                         <div style={{display: 'flex', flexDirection: 'column'}}>
-                            <div style={{fontWeight: 700, fontSize: 28, marginLeft: 30}}>{c.name} <span style={{fontSize: 20, fontWeight: 400}}>{`  [${c.rarity}]`}</span></div>
-                            <div>
-                                <div style={{marginLeft: 30}}>
-                                    <div>{c.race} / {c.faction}</div>
-                                    <div>{c.type}</div>
-                                    <div>{c.affinity}</div>
+                            <div style={{fontWeight: 700, marginLeft: 30}}>
+                            <span style={{fontSize: 28, fontWeight: 700, textDecoration: 'underline'}}>{c.name}</span>
+                                <span style={{fontSize: 20, fontWeight: 400}}>{`  [${c.rarity}]`}</span>
                                 </div>
-                            </div>
+    
+                                <div style={{marginLeft: 35, marginTop: 10}}>
+                                    <div><span style={{fontWeight: 500}}>Race: </span>{c.race}</div>
+                                    <div><span style={{fontWeight: 500}}>Faction: </span>{c.faction}</div>
+                                    <div><span style={{fontWeight: 500}}>Type: </span>{c.type}</div>
+                                    <div><span style={{fontWeight: 500}}>Affinity: </span>{c.affinity}</div>
+                                </div>
+          
                         </div>
                     </div>
                 </div>
@@ -92,7 +105,32 @@ export default class Codex extends React.Component {
             )
         }
 
-        const Rarity = () => {
+        const Search = ({c}) => {
+            return(
+                <div className={`${styles.filterContainer}`}>
+                    <div style={{display: 'flex', width: '100vw'}}>
+                        <div className='break' style={{fontSize: '2rem', color: 'gold', width: '50vw'}}>
+                            <div style={{fontWeight: 'bold', marginLeft: '25%'}}>Legendaries (A-Z)</div>
+                            <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                                {filteredByText.sort((a, b) => a.name.localeCompare(b.name)).filter(r => r.rarity === 'Legendary').map((c, i) => {
+                                    return <ChampCard key={i} c={c} type={'l'}/>
+                                })}
+                            </div>
+                        </div>
+                        <div className='break' style={{fontSize: '2rem', color: 'purple', width: '50vw'}}>
+                            <div style={{fontWeight: 'bold', marginLeft: '38%'}}>Epics (A-Z)</div>
+                            <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                                {filteredByText.sort((a, b) => a.name.localeCompare(b.name)).filter(r => r.rarity === 'Epic').map((c, i) => {
+                                        return <ChampCard key={i} c={c} type={'e'}/>
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
+        const Rarity = ({c}) => {
             return(
                 <div className={`${styles.filterContainer}`}>
                     <div style={{display: 'flex', width: '100vw'}}>
@@ -279,53 +317,62 @@ export default class Codex extends React.Component {
             )
         }
 
+
         return(
             <div>
-                <div style={{marginTop: 20, display: 'flex', justifyContent: 'center'}}>
-                    <span style={{marginRight: 10}}>Filter By: </span>
-                    <button 
-                        className={`${styles.filterBtn}`} 
-                        onClick={() => this.setState({filteredValue: 'Rarity'})} 
-                        style={{borderRadius: '15px 0 0 15px', background: filteredValue === 'Rarity' ? 'white' : null}}>
-                            Rarity
-                    </button>
-                    <button 
-                        className={`${styles.filterBtn}`} 
-                        onClick={() => this.setState({filteredValue: 'Race'})}
-                        style={{background: filteredValue === 'Race' ? 'white' : null}}>
-                            Race
-                    </button>
-                    <button 
-                        className={`${styles.filterBtn}`} 
-                        onClick={() => this.setState({filteredValue: 'Faction'})}
-                        style={{background: filteredValue === 'Faction' ? 'white' : null}}>
-                            Faction
-                    </button>
-                    <button 
-                        className={`${styles.filterBtn}`} 
-                        onClick={() => this.setState({filteredValue: 'Type'})}
-                        style={{background: filteredValue === 'Type' ? 'white' : null}}>
-                            Type
-                    </button>
-                    <button 
-                        className={`${styles.filterBtn}`} 
-                        onClick={() => this.setState({filteredValue: 'Affinity'})}
-                        style={{background: filteredValue === 'Affinity' ? 'white' : null, borderRadius: '0 15px 15px 0'}}>
-                            Affinity
-                    </button>
+                <div style={{marginTop: 20, display: 'flex', justifyContent: 'space-around'}}>
+                    <div>
+                        <span>Filter By: </span>
+                        <button 
+                            className={`${styles.filterBtn}`} 
+                            onClick={() => this.setState({filteredValue: 'Rarity'})} 
+                            style={{borderRadius: '15px 0 0 15px', background: filteredValue === 'Rarity' ? 'white' : null}}>
+                                Rarity
+                        </button>
+                        <button 
+                            className={`${styles.filterBtn}`} 
+                            onClick={() => this.setState({filteredValue: 'Race'})}
+                            style={{background: filteredValue === 'Race' ? 'white' : null}}>
+                                Race
+                        </button>
+                        <button 
+                            className={`${styles.filterBtn}`} 
+                            onClick={() => this.setState({filteredValue: 'Faction'})}
+                            style={{background: filteredValue === 'Faction' ? 'white' : null}}>
+                                Faction
+                        </button>
+                        <button 
+                            className={`${styles.filterBtn}`} 
+                            onClick={() => this.setState({filteredValue: 'Type'})}
+                            style={{background: filteredValue === 'Type' ? 'white' : null}}>
+                                Type
+                        </button>
+                        <button 
+                            className={`${styles.filterBtn}`} 
+                            onClick={() => this.setState({filteredValue: 'Affinity'})}
+                            style={{background: filteredValue === 'Affinity' ? 'white' : null, borderRadius: '0 15px 15px 0'}}>
+                                Affinity
+                        </button>
+                    </div>
+                    
+                    <span style={{marginLeft: 20}}>
+                        <span>Search Filter: </span>
+                        <input onChange={(e) => this.filterText(e)} type="text" placeholder="Search Champ Name" style={{height: 50, fontSize: '1.5rem'}} />
+                    </span>
                     <span style={{marginLeft: 20}}>
                         <span>View By:</span>
                         <button className={`${styles.filterBtn}`} style={{marginLeft: 10, borderRadius: '15px 0 0 15px', background: list ? 'white' : null}}  onClick={() => this.setState({list: true})}>List</button>
                         <button className={`${styles.filterBtn}`} style={{borderRadius: '0 15px 15px 0', background: !list ? 'white' : null}}  onClick={() => this.setState({list: false})}>Full</button>
                     </span>
                 </div>
-                
                 <div style={{marginTop: 20}}>
                     {filteredValue === 'Rarity' ? <Rarity /> : null}
                     {filteredValue === 'Race' ? <Race /> : null}
                     {filteredValue === 'Faction' ? <Faction /> : null}
                     {filteredValue === 'Type' ? <Type /> : null}
                     {filteredValue === 'Affinity' ? <Affinity /> : null}
+                    {filteredValue === 'search' ? <Search />: null}
+
                 </div>
             </div>
         )
