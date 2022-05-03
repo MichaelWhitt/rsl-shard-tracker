@@ -7,23 +7,26 @@ import supportIcon from '../../../src/icons/support.png'
 import axios from 'axios'
 
 export default class GameChampCard extends React.Component {
+    // bug-> rendering twice. I think it's the shuffled setState function rendering the champ cards twice on update.
 
     state={
         won: false,
-        fakeChampions: [],
-        allChampions: [],
-        chosenChamp: {},
+        fakeChampions: [], // 3 out of 4 of the chosen champs for the question
+        allChampions: [], // all 4 champs for the question
+        chosenChamp: {}, //obj of the chosen champ for the question
         display: false,
         score: 0,
         time: 30,
         scoreScreen: false,
         name: '',
-        email: ''
+        email: '',
+        waiting: false
     }
 
     componentDidMount(){
         if (this.state.allChampions.length === 0) this.getChamps()
         setTimeout(() => {this.setState({scoreScreen: true, display: false})}, 30000)
+        console.log('mounted', this.state)
     }
 
     componentDidUpdate(){
@@ -31,12 +34,8 @@ export default class GameChampCard extends React.Component {
             this.getChamps()
             this.setState({won: false})
         }
+        console.log(this.state.allChampions)
     }
-
-    updateTime = () => {
-        setInterval(() => {this.setState({time: this.state.time -1})}, 1000)
-    }
-
 
     showScoreScreen = async() => {
         this.setState({display: false, scoreScreen: true})
@@ -47,8 +46,13 @@ export default class GameChampCard extends React.Component {
 
         if(score > 0 ){
             if (name !== '' && name.length < 18) {
-                axios.post('/api/createScore', {user: name, score: score + '', time: time + '', email: email})
-                .then((res) => console.log(res)).catch((err) => console.log(err))
+                this.setState({waiting: true})
+                setTimeout(() => {
+                    axios.post('/api/createScore', {user: name, score: score + '', time: time + '', email: email})
+                    .then((res) => console.log(res)).catch((err) => console.log(err))
+                    this.props.togglePlaying()
+                }, 2500)
+               
             } else {
                 alert("Name can't be empty, and must be 18 or fewer characters.")
             }
@@ -67,7 +71,7 @@ export default class GameChampCard extends React.Component {
         for (let i = 0; i < 3; i++) {
             fakeChamps.push(allChamps[i])
         }
-
+        
         const shuffle = (array) => {
             let unshuffled = array
 
@@ -79,8 +83,7 @@ export default class GameChampCard extends React.Component {
                 this.setState({allChampions: shuffled})
         }
         shuffle(allChamps)
-        this.setState({fakeChampions: fakeChamps})
-        this.setState({chosenChamp: allChamps[3]})
+        this.setState({fakeChampions: fakeChamps, chosenChamp: allChamps[3]})
     }
 
     render(){
@@ -92,7 +95,7 @@ export default class GameChampCard extends React.Component {
                 if(e.target.innerText === this.state.chosenChamp.name) {
                     this.setState({score: this.state.score + 1, won: true})
                 } else if (e.target.innerText !== this.state.chosenChamp.name) {
-                    this.setState({score: this.state.score -1})
+                    this.setState({score: this.state.score -1, won: true})
                 }
             }
             
@@ -110,7 +113,6 @@ export default class GameChampCard extends React.Component {
             )
         }
         return (
-            <div>
                 <div>
                     {this.state.scoreScreen ?
                     <div style={{display: 'flex', justifyContent: 'center', marginTop: 80}}>
@@ -118,7 +120,6 @@ export default class GameChampCard extends React.Component {
                             <div style={{fontWeight: 700, paddingTop: 25}}>Congrats!</div>
                             <div style={{margin: '0 auto'}}>
                                 <div style={{margin: 40}}>Score: {this.state.score}</div>
-                                <div style={{fontSize: 15, marginTop: -30, marginBottom: 30, fontWeight: 700}}>{this.state.score < 0 ? "[Negative scores not tracked]" : null}</div>
                                 <div style={{fontWeight: 700, marginBottom: 10}}>Add Score To Leaderboards:</div>
                                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                                     <input 
@@ -135,12 +136,14 @@ export default class GameChampCard extends React.Component {
                                     />
                                 </div>
                             </div>
-                            <button className={`${styles.next}`} style={{background: '#fff'}} onClick={() => this.sendRecord()}>Send</button>
+                            {this.state.waiting ? <div style={{marginTop: 10}}>Record Saved!</div> : <button className={`${styles.next}`} style={{background: '#fff'}} onClick={() => this.sendRecord()}>Send</button>
+                            }
+                            <div style={{fontSize: 15, fontWeight: 700}}>{this.state.score < 0 ? "[Negative scores not tracked]" : null}</div>
                         </div>
                         <button className={`${styles.next}`} style={{height: 100, width: 100, borderRadius: 50, marginLeft:20, background: '#fff'}}onClick={() => this.props.togglePlaying()}>Retry</button>
                     </div>
                      : 
-                     <div style={{paddingTop: 30, width: '100%'}}>
+                     <div style={{paddingTop: 30, width: '100%', textAlign: 'center'}}>
                          <div style={{marginBottom: 55, display: 'flex', justifyContent: 'space-around', height: 40}}>
                             <span>Score: {this.state.score || 0}</span>
                         </div>
@@ -181,7 +184,6 @@ export default class GameChampCard extends React.Component {
                         : 
                         null}
                     </div>
-                </div>
             </div>
             )
         }

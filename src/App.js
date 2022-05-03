@@ -3,7 +3,7 @@ import './App.css';
 import GameGrid from './Components/Game/GameGrid'
 import Codex from './Components/Codex/Codex'
 import localChampions from './finalChampList.json'
-import axios from 'axios';
+
 
 function App() {
 
@@ -20,7 +20,7 @@ const [codex, setCodex] = useState(true)
 
 useEffect(() => {
   //loadChamps()
-  loadScores()
+  //loadScores()
 }, []) // will run on mount
 
 const loadChamps = async() => {
@@ -38,8 +38,7 @@ const loadScores = async() => {
 }
   
   return (
-    <div className="App">
-      <header className="App-header">
+      <div className="App-Container">
         <div>
           <button className='screenMode' style={{background: codex ? '#9fe2ba': null, borderRadius: '15px 0 0 15px'}} onClick={() => setCodex(true)}>Codex</button>
           <button className='screenMode' style={{background: codex ? null : '#9fe2ba', borderRadius: '0 15px 15px 0'}} onClick={() => setCodex(false)}>Game</button>
@@ -47,8 +46,7 @@ const loadScores = async() => {
         {codex ? <Codex champs={champs}/> : <GameGrid champs={champs} scores={scores}/>}
           
         {/* <button onClick={() =>createChamp()}>Send</button> */}
-      </header>
-    </div>
+      </div>
   );
 }
 

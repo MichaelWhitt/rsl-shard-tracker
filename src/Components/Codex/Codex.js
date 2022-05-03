@@ -280,7 +280,7 @@ export default class Codex extends React.Component {
         }
 
         return(
-            <div style={{width: '95vw', height: '92.5vh', textAlign: 'left'}}>
+            <div>
                 <div style={{marginTop: 20, display: 'flex', justifyContent: 'center'}}>
                     <span style={{marginRight: 10}}>Filter By: </span>
                     <button 
