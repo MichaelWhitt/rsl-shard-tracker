@@ -1,10 +1,22 @@
 import React from 'react'
 import styles from './styles.module.css'
-import defenseIcon from '../../../src/icons/shield.png'
-import attackIcon from '../../../src/icons/sword.png'
-import hpIcon from '../../../src/icons/hp.png'
-import supportIcon from '../../../src/icons/support.png'
 import axios from 'axios'
+
+const Questions = ({handleScoreState, allChampions}) => {
+    
+    return(
+        <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
+            {allChampions.map((c, i) => {
+                return (
+                    <div key={i} style={{width: '400px'}}>
+                        <button className={`${styles.questionButton}`} onClick={(e) => handleScoreState(e)}>{c?.name}</button>
+                    </div>
+                )
+            }
+            )}
+        </div>
+    )
+}
 
 export default class GameChampCard extends React.Component {
     // bug-> rendering twice. I think it's the shuffled setState function rendering the champ cards twice on update.
@@ -23,23 +35,30 @@ export default class GameChampCard extends React.Component {
         waiting: false
     }
 
+    handleScoreState = (e) => {
+        if(e.target.innerText === this.state.chosenChamp.name) {
+            this.setState({score: this.state.score + 1, won: true})
+        } else if (e.target.innerText !== this.state.chosenChamp.name) {
+            this.setState({score: this.state.score -1, won: true})
+        }
+    }
+
     componentDidMount(){
         if (this.state.allChampions.length === 0) this.getChamps()
         setTimeout(() => {this.setState({scoreScreen: true, display: false})}, 30000)
-        console.log('mounted', this.state)
     }
 
     componentDidUpdate(){
-        if (this.state.won === true) {
+        if (this.state.won === true){
             this.getChamps()
             this.setState({won: false})
         }
-        console.log(this.state.allChampions)
     }
 
-    showScoreScreen = async() => {
-        this.setState({display: false, scoreScreen: true})
-    }
+    shouldComponentUpdate = (_, nState) => {
+        if (this.state !== nState) return true
+        return false
+      }
 
     sendRecord = () => {
         const {score, time, name, email} = this.state
@@ -87,31 +106,7 @@ export default class GameChampCard extends React.Component {
     }
 
     render(){
-        const {chosenChamp} = this.state
-        
-        const Questions = () => {
-
-            const handleClick = (e) => {
-                if(e.target.innerText === this.state.chosenChamp.name) {
-                    this.setState({score: this.state.score + 1, won: true})
-                } else if (e.target.innerText !== this.state.chosenChamp.name) {
-                    this.setState({score: this.state.score -1, won: true})
-                }
-            }
-            
-            return(
-                <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-                    {this.state?.allChampions.map((c, i) => {
-                        return (
-                            <div key={i} style={{width: '400px'}}>
-                                <button className={`${styles.questionButton}`} onClick={(e) => handleClick(e)}>{c?.name}</button>
-                            </div>
-                        )
-                    }
-                    )}
-                </div>
-            )
-        }
+        const {chosenChamp, allChampions} = this.state
         return (
                 <div>
                     {this.state.scoreScreen ?
@@ -128,12 +123,12 @@ export default class GameChampCard extends React.Component {
                                         onChange={(e) => this.setState({name: e.target.value}) } 
                                         placeholder="Enter Name" 
                                     />
-                                    <input 
+                                    {false && <input 
                                         type="text" 
                                         style={{height:50, width: 300, fontSize: 30, marginTop: 5, borderRadius: 10}} 
                                         onChange={(e) => this.setState({email: e.target.value}) } 
                                         placeholder="Email (Optional)" 
-                                    />
+                                    />}
                                 </div>
                             </div>
                             {this.state.waiting ? <div style={{marginTop: 10}}>Record Saved!</div> : <button className={`${styles.next}`} style={{background: '#fff'}} onClick={() => this.sendRecord()}>Send</button>
@@ -148,42 +143,8 @@ export default class GameChampCard extends React.Component {
                             <span>Score: {this.state.score || 0}</span>
                         </div>
                         <img src={chosenChamp.image} alt='' style={{borderRadius: 15, boxShadow: '0 0 15px #9fe2bf'}} />
-                        <Questions />
+                        <Questions handleScoreState={this.handleScoreState} allChampions={allChampions}/>
                     </div> }
-                    <div style={{paddingTop: 20, width: '50%'}}>
-                    {false && this.state.display ? 
-                        <div style={{textAlign: 'left'}}>
-                            <img src={chosenChamp.image} alt='' style={{borderRadius: 15, border: chosenChamp.rarity === 'Legendary' ? '2px dashed gold' : '2px dashed #ff00ff'}} />
-                            <span style={{fontSize: 30, marginLeft: 40}}>{chosenChamp.name}</span>
-                            <div >
-                                <hr />
-                                <div>Rarity: <span style={{color: chosenChamp.rarity === 'Legendary' ? 'gold' : '#ff00ff'}}>{chosenChamp.rarity}</span></div>
-                                <div>Affinity: 
-                                    <span style={{color: 
-                                        chosenChamp.affinity === 'Void' ? '#ff00ff' :
-                                        chosenChamp.affinity === 'Force' ? 'red' :
-                                        chosenChamp.affinity === 'Magic' ? 'cyan' :
-                                        chosenChamp.affinity === 'Spirit' ? 'limegreen' : null
-                                    }}> {chosenChamp.affinity}</span>
-                                </div>
-                                <div>Type: {chosenChamp.type}
-                                <img 
-                                src={chosenChamp.type === 'Support' ? supportIcon:
-                                chosenChamp.type === 'Attack' ? attackIcon:
-                                chosenChamp.type === 'HP' ? hpIcon:
-                                chosenChamp.type === 'Defense' ? defenseIcon: null
-                            } 
-                                style={{filter: 'invert(100%)', position: 'relative', top: 5, left: 5}} width={30} alt=''/>
-                                </div>
-                                <div>Race: {chosenChamp.race}</div>
-                                <div>Faction: {chosenChamp.faction}</div>
-                                <button className={`${styles.next}`} onClick={() => this.setState({won: true, display: false})}>Next Champion</button>
-                                <button onClick={() => this.showScoreScreen()}>Create Score</button>
-                            </div>
-                        </div> 
-                        : 
-                        null}
-                    </div>
             </div>
             )
         }

@@ -5,6 +5,9 @@ import defenseIcon from '../../../src/icons/shield.png'
 import attackIcon from '../../../src/icons/sword.png'
 import hpIcon from '../../../src/icons/hp.png'
 import supportIcon from '../../../src/icons/support.png'
+import legendaryPortrait from '../../../src/icons/Legendary.PNG'
+import epicPortrait from '../../../src/icons/Epic.png'
+
 
 const ChampCard = ({c, i, list}) => {
     //filtering is defaulting to faction, find a way to change to rarity and name
@@ -16,13 +19,22 @@ const ChampCard = ({c, i, list}) => {
     //add filter by search
     //update force to Force in faunadb
 
+    const img = () => {
+        return(
+            <div style={{position: 'relative', marginBottom: -7}}>
+                <img src={c.image} width={list ? 100 : 154} alt={c.name} />
+                <img src={c.rarity === 'Legendary' ? legendaryPortrait : epicPortrait} style={{position: 'absolute', top: 0, left: 0}} width={list ? 100 : 154} alt={c.name} />
+            </div>
+        )
+    }
+
     return(
         <>
         {!list ? 
-        <div className={`${styles.champCard}`} style={{background: c.rarity === 'Epic' ? '#a865c9' : 'rgb(220, 191, 26)' }} key={i}>
+        <div className={`${styles.champCard}`} style={{background: '#121212', color: '#fff'}} key={i}>
             <div style={{display:'flex'}}>
                 <div style={{position: 'relative', left: 0, top: 0}}>
-                    <img src={c.image} height={200} style={{borderRadius: '15px 0 0 15px'}} alt={c.name} />
+                    {img()}
                 </div>
 
                 <div style={{display: 'flex', flexDirection: 'column'}}>
@@ -37,16 +49,15 @@ const ChampCard = ({c, i, list}) => {
                             <div><span style={{fontWeight: 500}}>Type: </span>{c.type}</div>
                             <div><span style={{fontWeight: 500}}>Affinity: </span>{c.affinity}</div>
                         </div>
-  
                 </div>
             </div>
         </div>
         : 
         <div className={`${styles.champListCard}`}>
             <div style={{display: 'flex'}}>
-                <img src={c.image} height={200} style={{borderRadius: '11px 0 0 0'}} alt={c.name} />
+                {img()}
                 <div style={{display: 'flex', flexDirection:'column', alignItems:'center', justifyContent: 'space-around'}}>
-                    <img style={{marginLeft: 10}} src={c.type === 'Attack' ? attackIcon:
+                    <img style={{marginLeft: 10, filter: 'invert(100%)'}} src={c.type === 'Attack' ? attackIcon:
                     c.type === 'Defense' ? defenseIcon: 
                     c.type === 'Support' ? supportIcon: 
                     c.type === 'HP' ? hpIcon:  null} width={50} alt='shield'/>
@@ -75,7 +86,7 @@ const ChampCard = ({c, i, list}) => {
                     </div>
                 </div>
             </div>
-            <div className={`${styles.listCardName}`} style={{color: c.rarity === 'Epic' ? '#ff00ff': 'gold'}}>{c.name}</div>
+            <div className={`${styles.listCardName}`} style={{color: 'white'}}>{c.name}</div>
         </div>
         
         }
@@ -84,22 +95,23 @@ const ChampCard = ({c, i, list}) => {
     )
 }
 
-const Search = ({c, filteredByText, list}) => {
+const Search = ({filteredByText, list}) => {
     return(
         <div className={`${styles.filterContainer}`}>
-            <div style={{display: 'flex', width: '100vw'}}>
-                <div className='break' style={{fontSize: '2rem', color: 'gold', width: '50vw'}}>
-                    <div style={{fontWeight: 'bold', marginLeft: '25%'}}>Legendaries (A-Z)</div>
-                    <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                        {filteredByText.sort((a, b) => a.name.localeCompare(b.name)).filter(r => r.rarity === 'Legendary').map((c, i) => {
+            <div style={{display: 'flex', width: '100%', overflowX: 'hidden'}}>
+                <div className='break' style={{fontSize: '2rem', color: 'gold', width: '50%'}}>
+                    <div style={{fontWeight: 'bold', background: '#000'}}>Legendaries (A-Z)</div>
+                    <div style={{display: 'flex', flexWrap: 'wrap', justifyContent:'center'}}>
+                        {filteredByText?.sort((a, b) => a.name.localeCompare(b.name)).filter(r => r.rarity === 'Legendary').map((c, i) => {
                             return <ChampCard key={i} c={c} type={'l'} list={list}/>
                         })}
                     </div>
                 </div>
-                <div className='break' style={{fontSize: '2rem', color: 'purple', width: '50vw'}}>
-                    <div style={{fontWeight: 'bold', marginLeft: '38%'}}>Epics (A-Z)</div>
-                    <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                        {filteredByText.sort((a, b) => a.name.localeCompare(b.name)).filter(r => r.rarity === 'Epic').map((c, i) => {
+                <div style={{width: '25px', height: 'auto', background: '#121212'}}/>
+                <div className='break' style={{fontSize: '2rem', color: '#ff00ff', width: '50%'}}>
+                    <div style={{fontWeight: 'bold', background: '#000'}}>Epics (A-Z)</div>
+                    <div style={{display: 'flex', flexWrap: 'wrap', justifyContent:'center'}}>
+                        {filteredByText?.sort((a, b) => a.name.localeCompare(b.name)).filter(r => r.rarity === 'Epic').map((c, i) => {
                                 return <ChampCard key={i} c={c} type={'e'} list={list}/>
                         })}
                     </div>
@@ -112,18 +124,19 @@ const Search = ({c, filteredByText, list}) => {
 const Rarity = ({c, champs, list}) => {
     return(
         <div className={`${styles.filterContainer}`}>
-            <div style={{display: 'flex', width: '100vw'}}>
-                <div className='break' style={{fontSize: '2rem', color: 'gold', width: '50vw'}}>
-                    <div style={{fontWeight: 'bold', marginLeft: '25%'}}>Legendaries (A-Z)</div>
-                    <div style={{display: 'flex', flexWrap: 'wrap'}}>
+            <div style={{display: 'flex', width: '100%'}}>
+                <div className='break' style={{fontSize: '2rem', color: 'gold', width: '50%'}}>
+                    <div style={{fontWeight: 'bold', background: '#000'}}>Legendaries (A-Z)</div>
+                    <div style={{display: 'flex', flexWrap: 'wrap', justifyContent:'center'}}>
                         {champs.sort((a, b) => a.name.localeCompare(b.name)).filter(r => r.rarity === 'Legendary').map((c, i) => {
                             return <ChampCard key={i} c={c} type={'l'} list={list}/>
                         })}
                     </div>
                 </div>
-                <div className='break' style={{fontSize: '2rem', color: 'purple', width: '50vw'}}>
-                    <div style={{fontWeight: 'bold', marginLeft: '38%'}}>Epics (A-Z)</div>
-                    <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                <div style={{width: '25px', height: 'auto', background: '#121212'}}/>
+                <div className='break' style={{fontSize: '2rem', color: '#ff00ff', width: '50%'}}>
+                    <div style={{fontWeight: 'bold', background: '#000'}}>Epics (A-Z)</div>
+                    <div style={{display: 'flex', flexWrap: 'wrap', justifyContent:'center'}}>
                         {champs.sort((a, b) => a.name.localeCompare(b.name)).filter(r => r.rarity === 'Epic').map((c, i) => {
                                 return <ChampCard key={i} c={c} type={'e'} list={list}/>
                         })}
@@ -310,7 +323,7 @@ export default class Codex extends React.Component {
         const searchVal = e.target.value.trim().toLowerCase()
         //champions = champions.sort((a, b) => a.name.localeCompare(b.name))
         const filteredChamps = champions.filter((c) => c.name.toLowerCase().includes(searchVal))
-        setTimeout(() => this.setState({filteredByText: filteredChamps, filteredValue: 'search'}), 1000)
+        setTimeout(() => this.setState({filteredByText: filteredChamps, filteredValue: 'Search'}), 1000)
     }
 
     render(){
@@ -371,7 +384,7 @@ export default class Codex extends React.Component {
                     {filteredValue === 'Faction' ? <Faction champs={champs} list={list} /> : null}
                     {filteredValue === 'Type' ? <Type champs={champs} list={list} /> : null}
                     {filteredValue === 'Affinity' ? <Affinity champs={champs} list={list} /> : null}
-                    {filteredValue === 'search' ? <Search champs={champs} list={list} />: null}
+                    {filteredValue === 'Search' ? <Search champs={champs} list={list} filteredByText={filteredByText} />: null}
                 </div>
             </div>
         )

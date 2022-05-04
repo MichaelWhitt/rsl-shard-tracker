@@ -23,8 +23,6 @@ const GameGrid = (props) => {
 
     const toggleGame = () => {
         playing ? setPlaying(false) : setPlaying(true)
-        console.log('toggle')
-        console.log(props)
     }
 
     return(
