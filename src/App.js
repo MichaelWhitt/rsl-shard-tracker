@@ -20,7 +20,7 @@ const [codex, setCodex] = useState(true)
 
 useEffect(() => {
   //loadChamps()
-  //loadScores()
+  loadScores()
 }, []) // will run on mount
 
 const loadChamps = async() => {
@@ -39,12 +39,11 @@ const loadScores = async() => {
   
   return (
       <div className="App-Container">
-        <div>
-          <button className='screenMode' style={{background: codex ? '#9fe2ba': null, borderRadius: '15px 0 0 15px'}} onClick={() => setCodex(true)}>Codex</button>
-          <button className='screenMode' style={{background: codex ? null : '#9fe2ba', borderRadius: '0 15px 15px 0'}} onClick={() => setCodex(false)}>Game</button>
+        <div style={{display: 'flex', background: 'rgb(50, 0, 200)', justifyContent: 'flex-start', alignItems:'flex-start', padding: 20}}>
+          <button className='screenMode' style={{background: codex ? 'cyan': 'white', borderRadius: '5px 0 0 5px', fontWeight: 700, fontSize: 20}} onClick={() => setCodex(true)}>Codex</button>
+          <button className='screenMode' style={{background: codex ? 'white' : 'cyan', borderRadius: '0 5px 5px 0', fontWeight: 700, fontSize: 20}} onClick={() => setCodex(false)}>Game</button>
         </div>
         {codex ? <Codex champs={champs}/> : <GameGrid champs={champs} scores={scores}/>}
-          
         {/* <button onClick={() =>createChamp()}>Send</button> */}
       </div>
   );

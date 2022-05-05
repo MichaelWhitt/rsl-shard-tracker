@@ -50,3 +50,8 @@
     background: #7cbb95;
     cursor: pointer;
 }
+
+td {
+    text-align: center;
+    background: #121212
+}

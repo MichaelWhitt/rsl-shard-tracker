@@ -22,8 +22,8 @@ const ChampCard = ({c, i, list}) => {
     const img = () => {
         return(
             <div style={{position: 'relative', marginBottom: -7}}>
-                <img src={c.image} width={list ? 100 : 154} alt={c.name} />
-                <img src={c.rarity === 'Legendary' ? legendaryPortrait : epicPortrait} style={{position: 'absolute', top: 0, left: 0}} width={list ? 100 : 154} alt={c.name} />
+                <img loading='lazy' src={c.image} width={list ? 100 : 154} alt={c.name} />
+                <img loading='lazy' src={c.rarity === 'Legendary' ? legendaryPortrait : epicPortrait} style={{position: 'absolute', top: 0, left: 0}} width={list ? 100 : 154} alt={c.name} />
             </div>
         )
     }
@@ -86,7 +86,7 @@ const ChampCard = ({c, i, list}) => {
                     </div>
                 </div>
             </div>
-            <div className={`${styles.listCardName}`} style={{color: 'white'}}>{c.name}</div>
+            <div className={`${styles.listCardName}`} style={{color: 'black'}}>{c.name}</div>
         </div>
         
         }
@@ -370,7 +370,7 @@ export default class Codex extends React.Component {
                     
                     <span style={{marginLeft: 20}}>
                         <span>Search Filter: </span>
-                        <input onChange={(e) => this.filterText(e)} type="text" placeholder="Search Champ Name" style={{height: 50, fontSize: '1.5rem'}} />
+                        <input onChange={(e) => this.filterText(e)} type="text" placeholder="Search Champ Name" style={{height: 40, fontSize: '1.5rem', borderRadius: 10}} />
                     </span>
                     <span style={{marginLeft: 20}}>
                         <span>View By:</span>

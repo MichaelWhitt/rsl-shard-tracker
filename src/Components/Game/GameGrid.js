@@ -26,8 +26,8 @@ const GameGrid = (props) => {
     }
 
     return(
-            <div style={{display: 'flex', width: '100vw', height: '87vh', background: 'black', marginTop: 50}}>
-                <div style={{width: '85%'}}>
+            <div style={{display: 'flex', width: '100vw', height: '85vh', background: 'black'}}>
+                <div style={{width: '75%'}}>
                     {playing ? <ConstructChamps champions={champs} playing={playing} togglePlaying={setPlaying} /> :
                     <div style={{display: 'flex', justifyContent: 'space-around'}}>
                         <div style={{marginTop: 100}}>
@@ -44,19 +44,43 @@ const GameGrid = (props) => {
                     </div>
                     }
                 </div>
-                <div style={{width: '15%', background: '#cc2f5c'}}>
-                    <div style={{background: 'orange'}}>Global Leaderboards</div>
+                <div style={{width: '20%', background: 'rgb(50, 0, 255', marginTop: 10, boxShadow: '0 0 5px cyan', borderRadius: 10}}>
+                    <div style={{
+                        background: 'cyan', 
+                        color: 'black', 
+                        fontWeight: 700, 
+                        fontSize: 25, 
+                        marginTop: 15,
+                        padding: 5,
+                        margin: '0 auto',
+                        width: '80%', 
+                        borderRadius: 10, 
+                        boxShadow: '0 0 5px #000'}}>
+                            Global Leaderboards
+                        </div>
                         {scores ? 
-                        <div style={{fontSize: 15, textAlign: 'left' , fontWeight: 700, marginTop: 10}}>
-                            {scores.map( (record, i )=> {
-                                return <div style={{fontSize: 15, fontWeight: 700}}>
-                                    <div style={{display: 'flex', margin: '0 5px'}}>
-                                        <span style={{marginRight: 15, width: 10}}>{i+1}</span>
-                                        <span style={{marginRight: 5, width: 150}}>{record.user}</span>
-                                        <span style={{position: 'relative', width: 50}}>{record.score}</span>
-                                    </div>
-                                </div>
-                            })}
+                        <div style={{marginTop: 10}}>
+                            <div style={{fontSize: 20, fontWeight: 700}}>
+                                <table style={{width: '100%'}}>
+                                    <tbody>
+                                    <tr style={{background: '#000'}}>
+                                        <th>Rank</th>
+                                        <th>User</th>
+                                        <th>Score</th>
+                                    </tr>
+                                    {scores.map( (record, i )=> {
+                                    return <tr key={i}>
+                                                <td style={{width: '15%'}}>{i+1}</td>
+                                                <td >{record.user}</td>
+                                                <td >{record.score}</td>
+                                            </tr>
+                                })}
+                                    </tbody>
+                                    
+                                   
+                                </table>
+                            </div>
+
                         </div>
                         : 
                         <div style={{fontSize: 15, textAlign: 'left' , fontWeight: 700}}>
