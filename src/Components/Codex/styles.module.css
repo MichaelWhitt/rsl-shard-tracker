@@ -76,9 +76,8 @@
 }
 
 .stickyButton:hover {
-    background: #ccc !important;
+    background: #00c5c5;
     cursor: pointer;
-
 }
 
 @media only screen and (max-width: 1400px) {
