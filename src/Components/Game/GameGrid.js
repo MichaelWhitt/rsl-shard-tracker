@@ -53,7 +53,7 @@ const GameGrid = (props) => {
                         marginTop: 15,
                         padding: 5,
                         margin: '0 auto',
-                        width: '80%', 
+                        width: '96%', 
                         borderRadius: 10, 
                         boxShadow: '0 0 5px #000'}}>
                             Global Leaderboards
