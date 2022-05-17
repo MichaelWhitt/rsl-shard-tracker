@@ -34,7 +34,7 @@ const GameGrid = (props) => {
                             Rules
                                 <div style={{textAlign: 'left'}}>
                                     <div style={{marginTop: 15, fontSize: 20}}>1. 30 Second Timer Immediately Starts</div>
-                                    <div style={{marginTop: 15, fontSize: 20}}>2. Right Answer, Score +1 </div>
+                                    <div style={{marginTop: 15, fontSize: 20}}>2. Right Answer: Score +1 </div>
                                     <div style={{marginTop: 15, fontSize: 20}}>3. Wrong Answer, Score -1</div>
                                 </div>
                         </div>
